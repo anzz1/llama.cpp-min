@@ -1,6 +1,19 @@
+# llama-minimalistic
+
+This is a fork of [llama.cpp](https://github.com/ggerganov/llama.cpp) by [@ggerganov](https://github.com/ggerganov) , with the aim of preserving the original lean, clean and fast codebase of the project.
+
+- Only bugfixes and improvements will be merged
+- Non-portable commits will not be merged
+- No "modern C++", compatible with C++11.
+- Stay true to the original lean C-style design as best as possible.
+
+
+Original README below.
+
+---
+
 # llama.cpp
 
-[![Actions Status](https://github.com/ggerganov/llama.cpp/workflows/CI/badge.svg)](https://github.com/ggerganov/llama.cpp/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Inference of [LLaMA](https://arxiv.org/abs/2302.13971) model in pure C/C++
