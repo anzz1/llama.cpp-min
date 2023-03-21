@@ -17,7 +17,7 @@ env:
  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
-  ubuntu-latest-make:
+  ubuntu-latest:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,62 +36,25 @@ jobs:
         run: |
           make
 
-  ubuntu-latest-cmake:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Clone
-        uses: actions/checkout@v1
-
-      - name: Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install build-essential
-
-      - name: Build
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build . --config Release
-
-  macOS-latest-make:
-    runs-on: macos-latest
-
-    steps:
-      - name: Clone
-        id: checkout
-        uses: actions/checkout@v1
-
-      - name: Dependencies
-        id: depends
-        run: |
-          brew update
-
-      - name: Build
-        id: make_build
-        run: |
-          make
-
-  macOS-latest-cmake:
+  macOS-latest:
     runs-on: macOS-latest
 
     steps:
       - name: Clone
+        id: checkout
         uses: actions/checkout@v1
 
       - name: Dependencies
+        id: depends
         run: |
           brew update
 
       - name: Build
+        id: make_build
         run: |
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build . --config Release
+          make
 
-  windows-latest-cmake:
+  windows-latest:
     runs-on: windows-latest
 
     steps:
