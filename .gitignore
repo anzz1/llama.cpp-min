@@ -18,10 +18,6 @@ models/*
 
 /main
 /quantize
-/result
 
 arm_neon.h
 compile_commands.json
-
-.envrc
-.direnv/
